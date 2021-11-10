@@ -30,7 +30,6 @@ class Card2 extends StatelessWidget {
                 authorName: 'Mike Katz',
                 title: 'Smoothie Connoisseur',
                 imageProvider: AssetImage('assets/author_katz.jpeg')),
-            // TODO 4: add Positioned text
             Expanded(
                 child: Stack(
               children: [
