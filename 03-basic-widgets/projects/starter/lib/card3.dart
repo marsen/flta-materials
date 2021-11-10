@@ -3,6 +3,7 @@ import 'fooderlich_theme.dart';
 
 class Card3 extends StatelessWidget {
   const Card3({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -46,8 +47,38 @@ class Card3 extends StatelessWidget {
                   const SizedBox(height: 30)
                 ],
               ),
-            )
-            // TODO 7: Add Center widget with Chip widget children
+            ),
+            Center(
+                child: Wrap(
+              alignment: WrapAlignment.start,
+              spacing: 12,
+              children: [
+                Chip(
+                  label: Text('Healthy',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                  backgroundColor: Colors.black.withOpacity(0.7),
+                  onDeleted: () {
+                    print('delete');
+                  },
+                ),
+                Chip(
+                  label: Text('Vegan',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                  backgroundColor: Colors.black.withOpacity(0.7),
+                  onDeleted: () {
+                    print('delete');
+                  },
+                ),
+                Chip(
+                  label: Text('Vegan',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                  backgroundColor: Colors.black.withOpacity(0.7),
+                  onDeleted: () {
+                    print('delete');
+                  },
+                ),
+              ],
+            ))
           ],
         ),
       ),
