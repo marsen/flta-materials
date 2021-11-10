@@ -28,7 +28,7 @@ class Card2 extends StatelessWidget {
             const AuthorCard(
                 authorName: 'Mike Katz',
                 title: 'Smoothie Connoisseur',
-                imageProvider: AssetImage('assets/author_katz.jpeg'))
+                imageProvider: AssetImage('assets/author_katz.jpeg')),
             // TODO 4: add Positioned text
           ],
         ),
