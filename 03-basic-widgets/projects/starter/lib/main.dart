@@ -13,7 +13,7 @@ class Fooderlich extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = FooderlichTheme.light();
+    final theme = FooderlichTheme.dark();
     // 3
     return MaterialApp(
       theme: theme,
