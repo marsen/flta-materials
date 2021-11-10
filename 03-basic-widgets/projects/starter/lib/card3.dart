@@ -70,7 +70,47 @@ class Card3 extends StatelessWidget {
                   },
                 ),
                 Chip(
-                  label: Text('Vegan',
+                  label: Text('Carrots',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                  backgroundColor: Colors.black.withOpacity(0.7),
+                  onDeleted: () {
+                    print('delete');
+                  },
+                ),
+                Chip(
+                  label: Text('Mint',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                  backgroundColor: Colors.black.withOpacity(0.7),
+                  onDeleted: () {
+                    print('delete');
+                  },
+                ),
+                Chip(
+                  label: Text('Wheat',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                  backgroundColor: Colors.black.withOpacity(0.7),
+                  onDeleted: () {
+                    print('delete');
+                  },
+                ),
+                Chip(
+                  label: Text('Greens',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                  backgroundColor: Colors.black.withOpacity(0.7),
+                  onDeleted: () {
+                    print('delete');
+                  },
+                ),
+                Chip(
+                  label: Text('Swing-Out-Long-Word-This-is',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                  backgroundColor: Colors.black.withOpacity(0.7),
+                  onDeleted: () {
+                    print('delete');
+                  },
+                ),
+                Chip(
+                  label: Text('Sugar-Push',
                       style: FooderlichTheme.darkTextTheme.bodyText1),
                   backgroundColor: Colors.black.withOpacity(0.7),
                   onDeleted: () {
