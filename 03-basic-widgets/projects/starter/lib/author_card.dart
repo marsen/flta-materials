@@ -21,6 +21,7 @@ class AuthorCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
@@ -39,7 +40,6 @@ class AuthorCard extends StatelessWidget {
               ),
             ],
           ),
-          // TODO 2: add IconButton
           IconButton(
               // 4
               icon: const Icon(Icons.favorite_border),
