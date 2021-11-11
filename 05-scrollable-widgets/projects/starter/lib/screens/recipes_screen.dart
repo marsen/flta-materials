@@ -20,8 +20,7 @@ class RecipesScreen extends StatelessWidget {
         // 4
         if (snapshot.connectionState == ConnectionState.done) {
           // TODO: Add RecipesGridView Here
-          // 5
-          return const Center(child: Text('Recipes Screen'));
+          return RecipesGridView(recipes: snapshot.data ?? []);
         } else {
           // 6
           return const Center(child: CircularProgressIndicator());
