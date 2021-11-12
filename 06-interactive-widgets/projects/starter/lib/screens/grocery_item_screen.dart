@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/components/grocery_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:intl/intl.dart';
@@ -103,7 +104,22 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             buildTimeField(context),
             buildColorPicker(context),
             buildQuantityField(),
-            // TODO: 19: Add Grocery Tile
+            GroceryTile(
+              item: GroceryItem(
+                id: 'previewMode',
+                name: _name,
+                importance: _importance,
+                color: _currentColor,
+                quantity: _currentSliderValue,
+                date: DateTime(
+                  _dueDate.year,
+                  _dueDate.month,
+                  _dueDate.day,
+                  _timeOfDay.hour,
+                  _timeOfDay.minute,
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -377,7 +393,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
           // 9
           onChanged: (double value) {
             setState(
-                  () {
+              () {
                 _currentSliderValue = value.toInt();
               },
             );
@@ -386,5 +402,4 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
       ],
     );
   }
-
 }
