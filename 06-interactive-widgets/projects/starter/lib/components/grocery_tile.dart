@@ -6,8 +6,10 @@ import '../models/grocery_item.dart';
 class GroceryTile extends StatelessWidget {
   // 1
   final GroceryItem item;
+
   // 2
   final Function(bool?)? onComplete;
+
   // 3
   final TextDecoration textDecoration;
 
@@ -16,8 +18,8 @@ class GroceryTile extends StatelessWidget {
     Key? key,
     required this.item,
     this.onComplete,
-  }) : textDecoration =
-  item.isComplete ? TextDecoration.lineThrough : TextDecoration.none,
+  })  : textDecoration =
+            item.isComplete ? TextDecoration.lineThrough : TextDecoration.none,
         super(key: key);
 
   @override
@@ -30,18 +32,14 @@ class GroceryTile extends StatelessWidget {
     );
   }
 
-// TODO: Add BuildImportance()
+  // TODO: Add BuildImportance()
   Widget buildImportance() {
     if (item.importance == Importance.low) {
-      return Text(
-          'Low',
-          style: GoogleFonts.lato(decoration: textDecoration));
+      return Text('Low', style: GoogleFonts.lato(decoration: textDecoration));
     } else if (item.importance == Importance.medium) {
-      return Text(
-          'Medium',
+      return Text('Medium',
           style: GoogleFonts.lato(
-              fontWeight: FontWeight.w800,
-              decoration: textDecoration));
+              fontWeight: FontWeight.w800, decoration: textDecoration));
     } else if (item.importance == Importance.high) {
       return Text(
         'High',
@@ -56,7 +54,7 @@ class GroceryTile extends StatelessWidget {
     }
   }
 
-// TODO: Add buildDate()
+  // TODO: Add buildDate()
   Widget buildDate() {
     final dateFormatter = DateFormat('MMMM dd h:mm a');
     final dateString = dateFormatter.format(item.date);
@@ -66,6 +64,13 @@ class GroceryTile extends StatelessWidget {
     );
   }
 
-
-// TODO: Add buildCheckbox()
+  // TODO: Add buildCheckbox()
+  Widget buildCheckbox() {
+    return Checkbox(
+      // 1
+      value: item.isComplete,
+      // 2
+      onChanged: onComplete,
+    );
+  }
 }
