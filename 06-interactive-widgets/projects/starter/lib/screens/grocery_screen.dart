@@ -1,13 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/screens/empty_grocery_screen.dart';
+import '/models/grocery_manager.dart';
+import 'package:provider/provider.dart';
+import '/screens/empty_grocery_screen.dart';
 
 class GroceryScreen extends StatelessWidget {
   const GroceryScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO 4: Add a scaffold widget
-    return const EmptyGroceryScreen();
+    // 5
+    return Scaffold(
+      // 6
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          // TODO 11: Present GroceryItemScreen
+        },
+      ),
+      // 7
+      body: buildGroceryScreen(),
+    );
   }
-// TODO: Add buildGroceryScreen
+
+  Widget buildGroceryScreen() {
+    // 1
+    return Consumer<GroceryManager>(
+      // 2
+      builder: (context, manager, child) {
+        // 3
+        if (manager.groceryItems.isNotEmpty) {
+          // TODO 25: Add GroceryListScreen
+          return Container();
+        } else {
+          // 4
+          return const EmptyGroceryScreen();
+        }
+      },
+    );
+  }
 }
