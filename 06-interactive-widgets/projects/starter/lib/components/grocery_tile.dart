@@ -24,7 +24,6 @@ class GroceryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO 21: Change this Widget
     return SizedBox(
       height: 100.0,
       // TODO 20: Replace this color
@@ -32,7 +31,49 @@ class GroceryTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // TODO 22: Add Row to group (name, date, importance)
+          Row(
+            children: [
+              // 2
+              Container(width: 5.0, color: item.color),
+              // 3
+              const SizedBox(width: 16.0),
+              // 4
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // 5
+                  Text(
+                    item.name,
+                    style: GoogleFonts.lato(
+                        decoration: textDecoration,
+                        fontSize: 21.0,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 4.0),
+                  buildDate(),
+                  const SizedBox(height: 4.0),
+                  buildImportance(),
+                ],
+              ),
+            ],
+          ),
           // TODO 23: Add Row to group (quantity, checkbox)
+          // 6
+          Row(
+            children: [
+              // 7
+              Text(
+                item.quantity.toString(),
+                style: GoogleFonts.lato(
+                  decoration: textDecoration,
+                  fontSize: 21,
+                ),
+              ),
+              // 8
+              buildCheckbox()
+            ],
+          )
         ],
       ),
     );
