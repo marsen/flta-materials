@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/models/models.dart';
+import 'models/models.dart';
 import 'package:provider/provider.dart';
 import 'screens/grocery_screen.dart';
 import 'screens/explore_screen.dart';
@@ -13,19 +13,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
     ExploreScreen(),
     RecipesScreen(),
     GroceryScreen()
   ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
