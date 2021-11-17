@@ -34,8 +34,8 @@ abstract class RecipeService extends ChopperService
 
 Request _addQuery(Request req) {
   final params = Map<String, dynamic>.from(req.parameters);
-  params['app_id'] = apiId;
-  params['app_key'] = apiKey;
+  params['app_id'] = '9c71ebab';
+  params['app_key'] = '094450926b765b2a8b1eb649b3bbfc70';
 
   return req.copyWith(parameters: params);
 }
