@@ -31,6 +31,14 @@ class AppRouter extends RouterDelegate
   }
 
   // TODO: Dispose listeners
+  @override
+  void dispose() {
+    appStateManager.removeListener(notifyListeners);
+    groceryManager.removeListener(notifyListeners);
+    profileManager.removeListener(notifyListeners);
+    super.dispose();
+  }
+
 
   // 6
   @override
