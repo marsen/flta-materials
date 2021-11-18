@@ -12,8 +12,10 @@ class AppRouter extends RouterDelegate
 
   // 3
   final AppStateManager appStateManager;
+
   // 4
   final GroceryManager groceryManager;
+
   // 5
   final ProfileManager profileManager;
 
@@ -21,9 +23,11 @@ class AppRouter extends RouterDelegate
     required this.appStateManager,
     required this.groceryManager,
     required this.profileManager,
-  })
-      : navigatorKey = GlobalKey<NavigatorState>() {
+  }) : navigatorKey = GlobalKey<NavigatorState>() {
     // TODO: Add Listeners
+    appStateManager.addListener(notifyListeners);
+    groceryManager.addListener(notifyListeners);
+    profileManager.addListener(notifyListeners);
   }
 
   // TODO: Dispose listeners
@@ -36,6 +40,7 @@ class AppRouter extends RouterDelegate
       // 8
       key: navigatorKey,
       // TODO: Add onPopPage
+      onPopPage: _handlePopPage,
       // 9
       pages: [
         // TODO: Add SplashScreen
@@ -51,6 +56,17 @@ class AppRouter extends RouterDelegate
   }
 
   // TODO: Add _handlePopPage
+  bool _handlePopPage(Route<dynamic> route, result) {
+    if (!route.didPop(result)) {
+      return false;
+    }
+    // 5
+    // TODO: Handle Onboarding and splash
+    // TODO: Handle state when user closes grocery item screen
+    // TODO: Handle state when user closes profile screen
+    // TODO: Handle state when user closes WebView screen
+    return true;
+  }
 
   // 10
   @override
