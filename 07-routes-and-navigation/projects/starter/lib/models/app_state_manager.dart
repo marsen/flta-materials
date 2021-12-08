@@ -43,6 +43,8 @@ class AppStateManager extends ChangeNotifier {
   }
 
   //Add login
+  // In a real scenario, you’d make an API request to log in.
+  // In this case, however, you’re just using a mock.
   void login(String username, String password) {
     // 10
     _loggedIn = true;
