@@ -42,7 +42,7 @@ class AppStateManager extends ChangeNotifier {
     );
   }
 
-  //Add login
+  // Add login
   // In a real scenario, you’d make an API request to log in.
   // In this case, however, you’re just using a mock.
   void login(String username, String password) {
@@ -51,8 +51,34 @@ class AppStateManager extends ChangeNotifier {
     // 11
     notifyListeners();
   }
-// TODO: Add completeOnboarding
-// TODO: Add goToTab
-// TODO: Add goToRecipes
-// TODO: Add logout
+
+  // Add completeOnboarding
+  void completeOnboarding() {
+    _onboardingComplete = true;
+    notifyListeners();
+  }
+
+  // Add goToTab
+  void goToTab(index) {
+    _selectedTab = index;
+    notifyListeners();
+  }
+  // Add goToRecipes
+  void goToRecipes() {
+    _selectedTab = FooderlichTab.recipes;
+    notifyListeners();
+  }
+  //Add logout
+  void logout() {
+    // 12
+    _loggedIn = false;
+    _onboardingComplete = false;
+    _initialized = false;
+    _selectedTab = FooderlichTab.explore;
+
+    // 13
+    initializeApp();
+    // 14
+    notifyListeners();
+  }
 }
