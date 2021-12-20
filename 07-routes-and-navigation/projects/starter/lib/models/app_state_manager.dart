@@ -11,17 +11,23 @@ class FooderlichTab {
 class AppStateManager extends ChangeNotifier {
   // 2
   bool _initialized = false;
+
   // 3
   bool _loggedIn = false;
+
   // 4
   bool _onboardingComplete = false;
+
   // 5
   int _selectedTab = FooderlichTab.explore;
 
   // 6
   bool get isInitialized => _initialized;
+
   bool get isLoggedIn => _loggedIn;
+
   bool get isOnboardingComplete => _onboardingComplete;
+
   int get getSelectedTab => _selectedTab;
 
   // Add initializeApp
@@ -33,12 +39,14 @@ class AppStateManager extends ChangeNotifier {
   // This simulates this scenario.
   void initializeApp() {
     // 7
-    Timer(const Duration(milliseconds: 2000), () {
-      // 8
-      _initialized = true;
-      // 9
-      notifyListeners();
-    },
+    Timer(
+      const Duration(milliseconds: 2000),
+      () {
+        // 8
+        _initialized = true;
+        // 9
+        notifyListeners();
+      },
     );
   }
 
@@ -63,11 +71,13 @@ class AppStateManager extends ChangeNotifier {
     _selectedTab = index;
     notifyListeners();
   }
+
   // Add goToRecipes
   void goToRecipes() {
     _selectedTab = FooderlichTab.recipes;
     notifyListeners();
   }
+
   //Add logout
   void logout() {
     // 12
@@ -76,8 +86,20 @@ class AppStateManager extends ChangeNotifier {
     _initialized = false;
     _selectedTab = FooderlichTab.explore;
 
-    // 13
-    initializeApp();
+    // Add initializeApp
+    void initializeApp() {
+      // 7
+      Timer(
+        const Duration(milliseconds: 2000),
+        () {
+          // 8
+          _initialized = true;
+          // 9
+          notifyListeners();
+        },
+      );
+    }
+
     // 14
     notifyListeners();
   }
