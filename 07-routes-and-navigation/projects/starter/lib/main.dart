@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import 'fooderlich_theme.dart';
 import 'models/models.dart';
-import 'screens/splash_screen.dart';
 import 'navigation/app_router.dart';
 
 void main() {
@@ -68,7 +67,9 @@ class _FooderlichState extends State<Fooderlich> {
             theme: theme,
             title: 'Fooderlich',
             // TODO: Replace with Router widget
-            home: const SplashScreen(),
+            home: Router(
+              routerDelegate: _appRouter,
+            ),
           );
         },
       ),
