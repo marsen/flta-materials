@@ -9,10 +9,13 @@ class AppRouter extends RouterDelegate
   // 2
   @override
   final GlobalKey<NavigatorState> navigatorKey;
+
   // 3
   final AppStateManager appStateManager;
+
   // 4
   final GroceryManager groceryManager;
+
   // 5
   final ProfileManager profileManager;
 
@@ -20,15 +23,21 @@ class AppRouter extends RouterDelegate
     required this.appStateManager,
     required this.groceryManager,
     required this.profileManager,
-  })
-      : navigatorKey = GlobalKey<NavigatorState>() {
+  }) : navigatorKey = GlobalKey<NavigatorState>() {
     // Add Listeners
     appStateManager.addListener(notifyListeners);
     groceryManager.addListener(notifyListeners);
     profileManager.addListener(notifyListeners);
   }
 
-  // TODO: Dispose listeners
+  // Dispose listeners
+  @override
+  void dispose() {
+    appStateManager.removeListener(notifyListeners);
+    groceryManager.removeListener(notifyListeners);
+    profileManager.removeListener(notifyListeners);
+    super.dispose();
+  }
 
   // 6
   @override
