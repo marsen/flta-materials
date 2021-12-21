@@ -6,7 +6,6 @@ import 'models/models.dart';
 import 'screens/splash_screen.dart';
 import 'navigation/app_router.dart';
 
-
 void main() {
   runApp(
     const Fooderlich(),
@@ -30,8 +29,16 @@ class _FooderlichState extends State<Fooderlich> {
   // Define AppRouter
   late AppRouter _appRouter;
 
-
-  // TODO: Initialize app router
+  // Initialize app router
+  @override
+  void initState() {
+    super.initState();
+    _appRouter = AppRouter(
+      appStateManager: _appStateManager,
+      groceryManager: _groceryManager,
+      profileManager: _profileManager,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +53,7 @@ class _FooderlichState extends State<Fooderlich> {
         // TODO: Add AppStateManager ChangeNotifierProvider
         ChangeNotifierProvider(
           create: (context) => _appStateManager,
-       ),
+        ),
       ],
       child: Consumer<ProfileManager>(
         builder: (context, profileManager, child) {
