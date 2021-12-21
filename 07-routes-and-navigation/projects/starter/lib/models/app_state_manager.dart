@@ -86,20 +86,8 @@ class AppStateManager extends ChangeNotifier {
     _initialized = false;
     _selectedTab = FooderlichTab.explore;
 
-    // Add initializeApp
-    void initializeApp() {
-      // 7
-      Timer(
-        const Duration(milliseconds: 2000),
-        () {
-          // 8
-          _initialized = true;
-          // 9
-          notifyListeners();
-        },
-      );
-    }
-
+    // 13
+    initializeApp();
     // 14
     notifyListeners();
   }
