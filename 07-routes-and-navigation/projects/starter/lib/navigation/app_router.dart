@@ -52,10 +52,12 @@ class AppRouter extends RouterDelegate
       pages: [
         // Add SplashScreen
         if (!appStateManager.isInitialized) SplashScreen.page(),
-        // TODO: Add LoginScreen
+        // Add LoginScreen
         if (appStateManager.isInitialized && !appStateManager.isLoggedIn)
           LoginScreen.page(),
-        // TODO: Add OnboardingScreen
+        // Add OnboardingScreen
+        if (appStateManager.isLoggedIn && !appStateManager.isOnboardingComplete)
+          OnboardingScreen.page(),
         // TODO: Add Home
         // TODO: Create new item
         // TODO: Select GroceryItemScreen
