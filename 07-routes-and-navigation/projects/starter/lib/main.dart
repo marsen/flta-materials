@@ -4,7 +4,8 @@ import 'package:provider/provider.dart';
 import 'fooderlich_theme.dart';
 import 'models/models.dart';
 import 'screens/splash_screen.dart';
-// TODO: Import app_router
+import 'navigation/app_router.dart';
+
 
 void main() {
   runApp(
@@ -26,7 +27,9 @@ class _FooderlichState extends State<Fooderlich> {
   // Create AppStateManager
   final _appStateManager = AppStateManager();
 
-  // TODO: Define AppRouter
+  // Define AppRouter
+  late AppRouter _appRouter;
+
 
   // TODO: Initialize app router
 
